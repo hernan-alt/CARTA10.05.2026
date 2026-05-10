@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Feliz Día de la Madre ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f6e3d4;
+}
+
+/* CONTENEDOR */
+.card {
+  display: flex;
+  max-width: 900px;
+  margin: 40px auto;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* IZQUIERDA */
+.left {
+  width: 50%;
+  padding: 40px;
+  background: #fdf7f2;
+}
+
+.left h1 {
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: #cc6b5a;
+}
+
+.left h2 {
+  font-size: 45px;
+  margin: 10px 0;
+  color: #cc6b5a;
+  font-family: Georgia, serif;
+}
+
+.sub {
+  margin-top: 10px;
+  background: #cc6b5a;
+  color: white;
+  display: inline-block;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+/* BOTON */
+.btn {
+  margin-top: 20px;
+  background-color: #cc6b5a;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.btn:hover {
+  background-color: #b85c4d;
+}
+
+/* CARTA */
+.carta {
+  margin-top: 25px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* DERECHA */
+.right {
+  width: 50%;
+}
+
+.right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* RESPONSIVE */
+@media(max-width: 700px) {
+  .card {
+    flex-direction: column;
+  }
+  .left, .right {
+    width: 100%;
+  }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+  <!-- IZQUIERDA -->
+  <div class="left">
+    <h1>PARA LA MEJOR</h1>
+    <h2>MAMÁ DEL MUNDO</h2>
+
+    <div class="sub">¡Feliz día!</div>
+
+    <button class="btn" onclick="playMusic(this)">
+      ▶️ Presiona antes de comenzar a leer 💖
+    </button>
+
+    <div class="carta">
+
+      <p>
+      En este día tan especial y ya por tercer año (Desde que la Lía está en tu vientre), quiero que recuerdes y tengas presente que eres la persona más importante en nuestras vidas.
+      </p>
+
+      <p>
+      Sé que hemos pasado por momentos no tan bonitos y que no siempre he estado a la altura, pero quiero agradecerte porque siempre estás ahí.
+      </p>
+
+      <p>
+      Eres una mujer maravillosa, hermosa y única… y sin duda la mejor madre del mundo.
+      </p>
+
+      <p>
+      Verte cada día, tu dedicación, tu cariño, tu paciencia…  
+      hacen que me enamore más de ti.
+      </p>
+
+      <p>
+      Te amo con todo mi corazón ❤️
+      </p>
+
+      <p><b>Feliz Día de la Madre 💖</b></p>
+
+    </div>
+  </div>
+
+  <!-- DERECHA -->
+  <div class="right">
+    <img src="foto pagina.jpg">
+  </div>
+
+</div>
+
+<!-- AUDIO -->
+<audio id="musica" loop>
+  <source src="Carlos Rivera - Otras Vidas (Video Oficial).mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function playMusic(btn) {
+  let audio = document.getElementById("musica");
+
+  audio.volume = 0;
+  audio.play();
+
+  // Fade in (sube el volumen suavemente)
+  let fade = setInterval(() => {
+    if (audio.volume < 1) {
+      audio.volume += 0.05;
+    } else {
+      clearInterval(fade);
+    }
+  }, 200);
+
+  // Cambiar botón después de tocar
+  btn.innerText = "💖 Te Amamos...";
+  btn.disabled = true;
+}
+</script>
+
+</body>
+</html>
